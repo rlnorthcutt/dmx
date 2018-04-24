@@ -1,0 +1,26 @@
+uuid: 31ef54d4-a44c-475a-9e7a-25cd19fb4d86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_dmx_project
+    - message.template.dmx_project__status
+id: message.dmx_project__status.field_dmx_project
+field_name: field_dmx_project
+entity_type: message
+bundle: dmx_project__status
+label: Project
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:project'
+  handler_settings:
+    target_bundles:
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

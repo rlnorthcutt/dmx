@@ -1,0 +1,23 @@
+uuid: 15d4744e-eac3-4c00-95f3-42e02b350e11
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - field.storage.project_task.field_dmx_project_task_links
+  module:
+    - link
+id: project_task.task.field_dmx_project_task_links
+field_name: field_dmx_project_task_links
+entity_type: project_task
+bundle: task
+label: 'Related links'
+description: 'Associated links with this task.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

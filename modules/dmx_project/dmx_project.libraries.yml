@@ -1,0 +1,16 @@
+dmx-project:
+  version: 1.x
+  css:
+    theme:
+      css/dmx-project.css: {}
+
+task-list:
+  version: 1.x
+  css:
+    theme:
+      css/dmx-project-task-list.css: {}
+  js:
+    js/dmx-project-task-list.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

@@ -1,0 +1,26 @@
+uuid: b5c2bc43-6ee6-4acc-850f-e7198cc884e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_type.campaign
+    - field.storage.message.field_dmx_project
+    - message.template.dmx_project_task__create
+id: message.dmx_project_task__create.field_dmx_project
+field_name: field_dmx_project
+entity_type: message
+bundle: dmx_project_task__create
+label: Project
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:project'
+  handler_settings:
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

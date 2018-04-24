@@ -1,0 +1,5 @@
+/* cleanup spacing */
+.views-table .views-field-operations { width: 1%; }
+.views-table td { padding: 5px; }
+.views-table .form-item { margin: 0; }
+.views-table [type="checkbox"] + label { height: 15px; }

@@ -1,0 +1,91 @@
+uuid: 15e50cfe-e429-4287-8453-c391e02216db
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - field.field.project_task.task.field_dmx_project_task_assigned
+    - field.field.project_task.task.field_dmx_project_task_content
+    - field.field.project_task.task.field_dmx_project_task_links
+    - field.field.project_task.task.field_dmx_project_task_media
+  module:
+    - datetime
+    - dmx_project
+    - link
+_core:
+  default_config_hash: 2yurO3TPTGbHtUCt2b0VGAHJ5RtxGQn7sIwEBnsTODg
+id: project_task.task.default
+targetEntityType: project_task
+bundle: task
+mode: default
+content:
+  description:
+    label: above
+    type: basic_string
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  due:
+    label: above
+    weight: 4
+    type: datetime_default
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    region: content
+    third_party_settings: {  }
+  field_dmx_project_task_assigned:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_dmx_project_task_content:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dmx_project_task_links:
+    weight: 7
+    label: above
+    settings:
+      trim_length: 40
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_dmx_project_task_media:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  project:
+    label: above
+    type: entity_reference_label
+    weight: 1
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  status:
+    label: inline
+    type: task_checkbox_formatter
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  name: true
+  uid: true

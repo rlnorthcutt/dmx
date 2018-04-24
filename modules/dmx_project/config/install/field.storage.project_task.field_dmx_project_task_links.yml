@@ -1,0 +1,19 @@
+uuid: 155db7c0-8a77-4efb-bee4-2dbd5e9f82f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - dmx_project
+    - link
+id: project_task.field_dmx_project_task_links
+field_name: field_dmx_project_task_links
+entity_type: project_task
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

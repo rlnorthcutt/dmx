@@ -1,0 +1,16 @@
+uuid: d7f60954-4119-4c88-9fa1-e3a2a8b68229
+langcode: en
+status: true
+template: dmx_project__create
+label: 'Project Create'
+description: 'Activity related to creating projects.'
+text:
+  -
+    value: "<p><a data-dmx-user=\"[message:author:uid]\" href=\"[message:author:url]\">[message:author]</a> created the project <span data-dmx-project=\"[message:field_dmx_project:target_id]\">[message:field_dmx_project]</span> <span class=\"dmx-team-time timeago\" title=\"[message:created:html_datetime]\">[message:created]</span></p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

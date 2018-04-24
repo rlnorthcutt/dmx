@@ -1,0 +1,75 @@
+uuid: 75f1671f-e2a5-441c-bc84-83b0d826ff7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_type.campaign
+  module:
+    - date_range_formatter
+    - options
+_core:
+  default_config_hash: 8QHczirfA41RwXTtMAjwUjmE1NXF_E6a3C4JFGMWQR4
+id: project.campaign.default
+targetEntityType: project
+bundle: campaign
+mode: default
+content:
+  date:
+    label: hidden
+    weight: 0
+    type: date_range_without_time
+    settings:
+      timezone_override: ''
+      single: 'd F Y \a\t g:ia'
+      single_all_day: 'd F Y'
+      one_day: 'd F Y \a\t g:ia'
+      one_month: 'd - {d} F Y'
+      several_months: 'd F - {d} {F} Y'
+      several_years: 'd F Y - {d} {F} {Y}'
+      separator: '-'
+      date_format: 'Y-m-d\TH:i:s'
+    region: content
+    third_party_settings: {  }
+  description:
+    label: above
+    type: basic_string
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  end_date:
+    label: above
+    weight: 1
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    region: content
+    third_party_settings: {  }
+  start_date:
+    label: above
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    region: content
+    third_party_settings: {  }
+  status:
+    label: above
+    type: list_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    label: above
+    type: entity_reference_entity_view
+    weight: 3
+    region: content
+    settings:
+      view_mode: dmx_team
+      link: false
+    third_party_settings: {  }
+hidden:
+  name: true

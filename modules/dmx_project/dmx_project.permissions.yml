@@ -1,0 +1,9 @@
+administer project types:
+  title: 'Administer Projects'
+
+administer project task types:
+  title: 'Administer Project tasks'
+
+permission_callbacks:
+  - '\Drupal\dmx_project\ProjectPermissionsGenerator::projectTypePermissions'
+  - '\Drupal\dmx_project\ProjectPermissionsGenerator::projectTaskTypePermissions'

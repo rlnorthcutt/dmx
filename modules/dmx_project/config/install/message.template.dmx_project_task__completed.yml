@@ -1,0 +1,16 @@
+uuid: 3e600b76-3992-43c0-aad5-3deed36d756c
+langcode: en
+status: true
+template: dmx_project_task__completed
+label: 'Task Completed'
+description: 'Activity related to completing project tasks.'
+text:
+  -
+    value: '<p><a data-dmx-user="[message:author:uid]" href="[message:author:url]">[message:author]</a> completed the task <span data-dmx-project-task="[message:field_dmx_project_task:target_id]">[message:field_dmx_project_task]</span> <span class="dmx-team-time timeago" title="[message:created:html_datetime]">[message:created]</span></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

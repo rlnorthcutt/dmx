@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+# DMX
 
-You can use the [editor on GitHub](https://github.com/johnmoney/dmx/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+DMX is a suite of modules designed to enhance the Drupal marketer experience. Each module is centered on fulfilling common marketer user stories, for example:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> As a marketer, I would like to see all the content and assets related to a project gathered in a single place so that I can effectively manage the project.
 
-### Markdown
+## Installation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+DMX uses the [jQuery Timeago](http://timeago.yarp.com/) plugin to create dynamically updating "time ago" dates. To get the library, run composer update.
 
-```markdown
-Syntax highlighted code block
+DMX requires a [patch to Date Range Formatter](https://www.drupal.org/files/issues/2018-04-17/2961280-date_range_formatter-optional_end_date.patch) to support optional end dates. This will need to be applied manually.
 
-# Header 1
-## Header 2
-### Header 3
+## Compatibility
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/johnmoney/dmx/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+DMX has only been tested with Drupal 8.5 and [Material Admin](https://www.drupal.org/project/material_admin) administration theme.

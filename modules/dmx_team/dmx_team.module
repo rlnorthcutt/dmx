@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Contains dmx_team.module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ * Add library to admin pages.
+ *
+ * @param array $attachments
+ */
+function dmx_team_page_attachments(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+
+  if ($is_admin) {
+    $attachments['#attached']['library'][] = 'dmx_team/dmx-team';
+  }
+}

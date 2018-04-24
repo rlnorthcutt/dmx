@@ -1,0 +1,16 @@
+uuid: c55fa97d-d0b4-4142-b491-1f589b7b81b3
+langcode: en
+status: true
+template: dmx_project_task__assigned
+label: 'Task Assigned'
+description: 'Activity related to assigning project tasks.'
+text:
+  -
+    value: '<p><a data-dmx-user="[message:author:uid]" href="[message:author:url]">[message:author]</a> assigned the task <span data-dmx-project-task="[message:field_dmx_project_task:target_id]">[message:field_dmx_project_task]</span> to <a data-dmx-user="[message:field_dmx_project_task_assigned:0:target_id]" href="/user/[message:field_dmx_project_task_assigned:0:target_id]">[message:field_dmx_project_task_assigned:0:entity]</a> <span class="dmx-team-time timeago" title="[message:created:html_datetime]">[message:created]</span></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

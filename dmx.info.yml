@@ -1,0 +1,10 @@
+name: DMX
+type: module
+description: Core functionality for DMX.
+package: DMX
+core: 8.x
+version: '8.x-1.x-dev'
+dependencies:
+  - config_rewrite
+  - lightning_media
+  - twig_tweak

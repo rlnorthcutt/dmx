@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ *
+ * Default theme implementation for project task inline form.
+ *
+ * Available variables:
+ * - form: The project task form.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+<div class="row">
+    <div class="col s12">{{  form.task }}</div>
+    <div class="col s5">{{  form.assigned }}</div>
+    <div class="col s5">{{ form.due }}</div>
+    <div class="col s2">{{ form.actions }}</div>
+</div>

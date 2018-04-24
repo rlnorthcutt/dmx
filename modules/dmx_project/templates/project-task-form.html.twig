@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ *
+ * Default theme implementation for project task form.
+ *
+ * Available variables:
+ * - form: The project task form.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+<div class="row">
+    <div class="col s12 m5">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Task</span>
+                {{ form|without('actions', 'field_dmx_project_task_content', 'field_dmx_project_task_media', 'field_dmx_project_task_links') }}
+            </div>
+            <div class="card-action">
+                {{ form.actions }}
+            </div>
+        </div>
+
+    </div>
+    <div class="col s12 m7">
+        {{ form.field_dmx_project_task_content }}
+        {{ form.field_dmx_project_task_media }}
+        {{ form.field_dmx_project_task_links }}
+    </div>
+</div>

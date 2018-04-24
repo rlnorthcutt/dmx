@@ -1,0 +1,21 @@
+uuid: 6a8eee10-1a9d-4c27-a13f-5004a79dedb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.dmx_project__create.field_dmx_project
+    - message.template.dmx_project__create
+  module:
+    - user
+id: message.dmx_project__create.default
+targetEntityType: message
+bundle: dmx_project__create
+mode: default
+content:
+  partial_0:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_dmx_project: true

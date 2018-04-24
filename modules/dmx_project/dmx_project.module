@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Contains dmx_project.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Render\Element;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function dmx_project_theme() {
+    return [
+        'project' => [
+            'render element' => 'elements',
+        ],
+        'project_form' => [
+            'render element' => 'form',
+        ],
+        'project_task' => [
+            'render element' => 'elements',
+        ],
+        'project_task_form' => [
+            'render element' => 'form',
+        ],
+        'project_task_inline_form' => [
+            'render element' => 'form',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function dmx_project_views_pre_render(ViewExecutable $view) {
+    if (isset($view) && in_array($view->storage->id(), ['dmx_project_task', 'dmx_project_tasks'])) {
+        $view->element['#attached']['library'][] = 'dmx_project/task-list';
+    }
+}
+
+/**
+ * Prepares variables for project templates.
+ *
+ * Default template: project.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing rendered fields.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_project(array &$variables) {
+    /** @var Drupal\project\Entity\ProjectInterface $project */
+    $project = $variables['elements']['#project'];
+
+    $variables['project'] = $project;
+    // Helpful $content variable for templates.
+    $variables['content'] = [];
+    foreach (Element::children($variables['elements']) as $key) {
+        $variables['content'][$key] = $variables['elements'][$key];
+    }
+
+    // Add library.
+    $variables['#attached']['library'][] =  'dmx_project/dmx-project';
+}
+
+/**
+ * Prepares variables for project_task templates.
+ *
+ * Default template: project_task.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing rendered fields.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_project_task(array &$variables) {
+    /** @var Drupal\project\Entity\ProjectTaskInterface $project_task */
+    $project_task = $variables['elements']['#project_task'];
+
+    $variables['project_task'] = $project_task;
+    // Helpful $content variable for templates.
+    $variables['content'] = [];
+    foreach (Element::children($variables['elements']) as $key) {
+        $variables['content'][$key] = $variables['elements'][$key];
+    }
+
+    // Add library.
+    $variables['#attached']['library'][] =  'dmx_project/dmx-project';
+}

@@ -1,0 +1,20 @@
+uuid: f57c3c6c-cf37-412a-8639-97e79a059126
+langcode: en
+status: true
+dependencies:
+  module:
+    - dmx_project
+    - message
+id: message.field_dmx_project
+field_name: field_dmx_project
+entity_type: message
+type: entity_reference
+settings:
+  target_type: project
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

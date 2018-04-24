@@ -1,0 +1,112 @@
+{#
+/**
+ * @file
+ *
+ * Default theme implementation for projects.
+ *
+ * Available variables:
+ * - content: Items for the content of the project.
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.title'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('title') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - project: The project object.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+    'project',
+    'status-' ~ project.status.value|clean_class
+    ]
+%}
+<section {{ attributes.addClass(classes) }}>
+    <div class="row">
+        <div class="col s12 l8">
+            <div class="field--name-status">
+                <ul>
+                    {# Refactor to use status field allowed values #}
+                    {%
+                    set steps = [
+                    { id: 'plan', title: "Planned" },
+                    { id: 'progress', title: "In progress" },
+                    { id: 'complete', title: "Completed" }
+                    ]
+                    %}
+                    {% for step in steps %}
+                        <li class="status-{{ step.id }}"><span><strong>{{ step.title }}</strong></span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col s12 l4">
+            {{ content.date }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l8">
+            <div class="card card-summary">
+                <div class="card-content">
+                    <span class="card-title">Project Summary</span>
+                    {{ content|without('uid', 'status', 'date') }}
+                </div>
+            </div>
+
+            <div class="card card-tasks">
+                <div class="card-content">
+                    <span class="card-title tooltipped" data-tooltip="Tasks represent items of work to be done on a project" data-position="bottom">Tasks</span>
+                    <!-- div class="progress"><div class="determinate" style="width: 70%"></div></div -->
+                    {{ drupal_view('dmx_project_task', 'task_list', project.id.value) }}
+                </div>
+                <div class="card-action">
+                    {{ drupal_form('Drupal\\dmx_project\\Form\\ProjectTaskInlineForm') }}
+                </div>
+            </div>
+
+            {% set view = drupal_view('dmx_project_content', 'project_content', project.id.value) %}
+            {% if view is not empty %}
+            <div class="card card-related-content">
+                <div class="card-content">
+                    <span class="card-title tooltipped" data-tooltip="Content related to tasks" data-position="bottom">Content</span>
+                    {{ view }}
+                </div>
+            </div>
+            {%  endif %}
+
+            {% set view = drupal_view('dmx_project_media', 'project_media', project.id.value) %}
+            {% if view is not empty %}
+            <div class="card card-related-media">
+                <div class="card-content">
+                    <span class="card-title tooltipped" data-tooltip="Media related to tasks" data-position="bottom">Media</span>
+                    {{ view }}
+                </div>
+            </div>
+            {%  endif %}
+
+        </div>
+
+        <div class="col s12 l4">
+            <div class="card card-people">
+                <div class="card-content">
+                    <span class="card-title">People</span>
+                    {{ content.uid }}
+
+                    <div class="field__label">Project team</div>
+                    {{ drupal_view('dmx_project_user', 'project_user', project.id.value) }}
+                </div>
+            </div>
+
+            <div class="card card-activity">
+                <div class="card-content">
+                    <span class="card-title">Activity</span>
+                    {{ drupal_view('dmx_project_activity', 'project_activity', project.id.value) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

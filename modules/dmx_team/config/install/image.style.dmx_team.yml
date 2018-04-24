@@ -1,0 +1,14 @@
+uuid: 51de5eb9-f282-45a1-aa89-88d86e9affa4
+langcode: en
+status: true
+dependencies: {  }
+name: dmx_team
+label: 'DMX Team'
+effects:
+  4d6982ac-971d-48aa-9bd1-4549ed546fb4:
+    uuid: 4d6982ac-971d-48aa-9bd1-4549ed546fb4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 48
+      height: 48

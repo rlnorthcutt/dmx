@@ -1,0 +1,26 @@
+uuid: 502fcb37-779b-4f0d-8579-4d18209bc5ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - field.storage.message.field_dmx_project_task
+    - message.template.dmx_project_task__completed
+id: message.dmx_project_task__completed.field_dmx_project_task
+field_name: field_dmx_project_task
+entity_type: message
+bundle: dmx_project_task__completed
+label: Task
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:project_task'
+  handler_settings:
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

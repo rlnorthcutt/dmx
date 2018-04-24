@@ -1,0 +1,11 @@
+name: DMX Team
+type: module
+description: Enables marketing team to communicate and collaborate.
+package: DMX
+core: 8.x
+version: '8.x-1.x-dev'
+dependencies:
+    - image
+    - lightning_core
+    - message
+    - user

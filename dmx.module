@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains dmx.module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ * Add libraries to admin pages.
+ *
+ * @param array $attachments
+ */
+function dmx_page_attachments(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+
+  if ($is_admin) {
+    //@TODO if material_admin is not current theme, attach material-base instead
+    $attachments['#attached']['library'][] = 'dmx/material-overrides';
+    $attachments['#attached']['library'][] = 'dmx/timeago';
+  }
+}

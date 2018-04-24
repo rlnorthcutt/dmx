@@ -1,0 +1,26 @@
+uuid: 40cd4e87-af3f-418c-a618-4ab0bb58311d
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - field.storage.project_task.field_dmx_project_task_media
+id: project_task.task.field_dmx_project_task_media
+field_name: field_dmx_project_task_media
+entity_type: project_task
+bundle: task
+label: 'Related media'
+description: 'Associate media with this task.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

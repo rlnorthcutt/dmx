@@ -1,0 +1,6 @@
+uuid: 5dc1e607-4b21-4130-9d54-c7e330de1468
+langcode: en
+status: true
+id: task
+label: Task
+description: 'Default project task.'

@@ -1,0 +1,32 @@
+uuid: d998de98-1c63-4209-b848-64a57d3fd43e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.dmx_team
+    - field.field.user.user.user_picture
+    - image.style.dmx_team
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 0sOXnIcH_JtE2G5afKzcPVW7VTs6WbUK7DfESmhJJ0s
+id: user.user.dmx_team
+targetEntityType: user
+bundle: user
+mode: dmx_team
+content:
+  user_picture:
+    type: image
+    weight: 0
+    settings:
+      image_style: dmx_team
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+    region: content
+hidden:
+  member_for: true
+  user_mail: true
+  user_name: true
+  user_roles: true

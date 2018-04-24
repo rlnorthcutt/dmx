@@ -1,0 +1,107 @@
+uuid: 6184041c-a7d2-45b6-9630-36f6a9ac685e
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - entity_browser.browser.media_browser_in_modal
+    - field.field.project_task.task.field_dmx_project_task_assigned
+    - field.field.project_task.task.field_dmx_project_task_content
+    - field.field.project_task.task.field_dmx_project_task_links
+    - field.field.project_task.task.field_dmx_project_task_media
+  module:
+    - datetime
+    - entity_browser
+    - inline_entity_form
+    - link
+_core:
+  default_config_hash: r66s7PJ0yQ0V4Tsi2n8H5fm8BJHfnpo-5CQKm7h18a0
+id: project_task.task.default
+targetEntityType: project_task
+bundle: task
+mode: default
+content:
+  description:
+    weight: 5
+    type: string_textarea
+    settings:
+      rows: 4
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  due:
+    weight: 4
+    type: datetime_default
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dmx_project_task_assigned:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Type one or more user names.'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_dmx_project_task_content:
+    weight: 7
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: content
+      label_plural: content
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_dmx_project_task_links:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_dmx_project_task_media:
+    type: entity_browser_entity_reference
+    weight: 8
+    settings:
+      entity_browser: media_browser_in_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+    region: content
+    third_party_settings: {  }
+  name:
+    weight: 2
+    type: string_textfield
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  project:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  status:
+    weight: 0
+    type: boolean_checkbox
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  uid: true

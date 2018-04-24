@@ -1,0 +1,14 @@
+uuid: 91b90c4e-e34d-4344-9992-6eaeb58918cb
+langcode: en
+status: true
+dependencies: {  }
+name: dmx_media_preview
+label: 'DMX Media Preview'
+effects:
+  2f60bbcf-d49a-4b2d-b652-3a50737415e5:
+    uuid: 2f60bbcf-d49a-4b2d-b652-3a50737415e5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200

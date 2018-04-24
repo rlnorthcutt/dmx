@@ -1,0 +1,83 @@
+/* Status steps */
+.project .field--name-status ul { display: flex; margin-right: 10px; }
+.project .field--name-status li { flex-grow: 1; }
+.project .field--name-status li span {
+  display: block;
+  text-align: center;
+  color: #FFF;
+  background-color: #bbb;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+}
+.project .field--name-status li span::after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid #bbb;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  left: 100%;
+  z-index: 2;
+}
+.project .field--name-status li span::before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1;
+}
+.project .field--name-status li span strong::before {
+  content: 'event';
+  font-family: 'Material Icons';
+  font-size: 18px;
+  vertical-align: middle;
+  padding-right: 8px;
+  color: #FFF;
+  font-weight: normal;
+}
+.project .field--name-status li.status-progress span strong::before {
+  content: 'timelapse';
+}
+.project .field--name-status li.status-complete span strong::before {
+  content: 'check_circle';
+}
+.project .field--name-status li:first-child span { background-color: #00A5E3; }
+.project .field--name-status li:first-child span::after { border-left: 10px solid #00A5E3; }
+.project.status-progress .field--name-status li.status-plan span,
+.project.status-progress .field--name-status li.status-progress span { background-color: #f7870a; }
+.project.status-progress .field--name-status li.status-plan span::after,
+.project.status-progress .field--name-status li.status-progress span::after { border-left: 10px solid #f7870a; }
+.project.status-complete .field--name-status li span { background-color: #00A707; }
+.project.status-complete .field--name-status li span::after { border-left: 10px solid #00A707; }
+
+.project .field--name-date {
+  font-size: 1.5rem;
+  margin-top: 1.2rem;
+  color: #333;
+}
+
+/* Form */
+.project-task-inline-form .row,
+.project-task-inline-form .form-item { margin: 0; padding: 0 !important; }
+.project-task-inline-form .form-actions { padding-top: 1rem; }
+.project-task-inline-form .form-item-due .field-prefix { color: #999; }
+
+
+/* Activity */
+section.project .dmx-team-activity [data-dmx-project], /* hide the name of the project if on project or project_task page */
+section.project .dmx-team-activity .field--name-field-dmx-project,
+section.project_task .dmx-team-activity .field--name-field-dmx-project { display: none; }
+section.project_task .dmx-team-activity [data-dmx-project-task] { display: none; } /* hide the name of the task if on task page */

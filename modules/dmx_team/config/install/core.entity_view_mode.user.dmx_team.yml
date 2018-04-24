@@ -1,0 +1,14 @@
+uuid: d254d58c-b334-4fec-aba8-9ab98be64410
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - user
+third_party_settings:
+  lightning_core:
+    description: 'User view mode for DMX Team.'
+id: user.dmx_team
+label: 'DMX Team'
+targetEntityType: user
+cache: true

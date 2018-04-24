@@ -1,0 +1,20 @@
+name: DMX Project
+type: module
+description: Enables tasks, content, assets and links to be related for the planning and launch of a project.
+package: DMX
+core: 8.x
+version: '8.x-1.x-dev'
+dependencies:
+  - datetime
+  - datetime_range
+  - date_range_formatter
+  - dmx
+  - dmx_team
+  - entity_browser
+  - entity_reference
+  - inline_entity_form
+  - lightning_media
+  - link
+  - node
+  - optional_end_date
+  - options

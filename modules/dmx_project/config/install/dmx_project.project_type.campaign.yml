@@ -1,0 +1,6 @@
+uuid: b1bbfe3d-474d-46b9-861d-e731353c81a5
+langcode: en
+status: true
+id: campaign
+label: Campaign
+description: 'Default project type is a campaign.'

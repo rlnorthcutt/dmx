@@ -1,0 +1,21 @@
+uuid: b896c10f-6a9b-46bc-82e8-74209922ea18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.dmx_project__status.field_dmx_project
+    - message.template.dmx_project__status
+  module:
+    - user
+id: message.dmx_project__status.default
+targetEntityType: message
+bundle: dmx_project__status
+mode: default
+content:
+  partial_0:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_dmx_project: true

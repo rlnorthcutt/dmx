@@ -1,0 +1,5 @@
+dmx-team:
+  version: 1.x
+  css:
+    theme:
+      css/dmx-team.css: {}

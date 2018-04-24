@@ -1,0 +1,26 @@
+dmx_project.project_type.*:
+  type: config_entity
+  label: 'Project type settings'
+  mapping:
+    id:
+      type: string
+      label: 'Machine-readable name'
+    uuid:
+      type: stype
+      label: 'UUID'
+    label:
+      type: label
+      label: 'Label'
+dmx_project.project_task_type.*:
+  type: config_entity
+  label: 'Project Task type settings'
+  mapping:
+    id:
+      type: string
+      label: 'Machine-readable name'
+    uuid:
+      type: stype
+      label: 'UUID'
+    label:
+      type: label
+      label: 'Label'

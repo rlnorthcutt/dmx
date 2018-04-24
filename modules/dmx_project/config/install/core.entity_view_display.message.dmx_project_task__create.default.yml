@@ -1,0 +1,30 @@
+uuid: 9d92ec16-bc4c-47b3-92a5-de15852d5f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.dmx_project_task__create.field_dmx_project
+    - field.field.message.dmx_project_task__create.field_dmx_project_task
+    - message.template.dmx_project_task__create
+  module:
+    - user
+id: message.dmx_project_task__create.default
+targetEntityType: message
+bundle: dmx_project_task__create
+mode: default
+content:
+  field_dmx_project:
+    weight: 0
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  partial_0:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_dmx_project_task: true

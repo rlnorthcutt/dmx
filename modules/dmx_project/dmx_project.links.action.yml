@@ -1,0 +1,23 @@
+project_action_add:
+  route_name: entity.project.add_page
+  title: 'Add Project'
+  appears_on:
+    - entity.project.collection
+
+project_type_action_add:
+  route_name: entity.project_type.add_form
+  title: 'Add Project type'
+  appears_on:
+    - entity.project_type.collection
+
+project_task_action_add:
+  route_name: entity.project_task.add_page
+  title: 'Add Task'
+  appears_on:
+    - entity.project_task.collection
+
+project_task_type_action_add:
+  route_name: entity.project_task_type.add_form
+  title: 'Add Task type'
+  appears_on:
+    - entity.project_task_type.collection

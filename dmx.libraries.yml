@@ -1,0 +1,19 @@
+material-base:
+  version: 1.x
+  css:
+    theme:
+      css/material-base.css: {}
+
+material-overrides:
+  version: 1.x
+  css:
+    theme:
+      css/material-overrides.css: {}
+
+timeago:
+  js:
+    vendor/rmm5t/jquery-timeago/jquery.timeago.js: {}
+    js/timeago.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

@@ -1,0 +1,28 @@
+uuid: d0dcb62a-5e68-4c0c-8aca-9323e3199d42
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - field.storage.project_task.field_dmx_project_task_assigned
+id: project_task.task.field_dmx_project_task_assigned
+field_name: field_dmx_project_task_assigned
+entity_type: project_task
+bundle: task
+label: 'Assigned to'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

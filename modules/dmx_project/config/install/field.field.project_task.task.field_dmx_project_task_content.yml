@@ -1,0 +1,26 @@
+uuid: c89fafb9-0511-4208-b1f7-18891412d2b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - dmx_project.project_task_type.task
+    - field.storage.project_task.field_dmx_project_task_content
+id: project_task.task.field_dmx_project_task_content
+field_name: field_dmx_project_task_content
+entity_type: project_task
+bundle: task
+label: 'Related content'
+description: 'Associate content with this task.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

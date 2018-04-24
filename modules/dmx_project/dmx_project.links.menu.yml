@@ -1,0 +1,23 @@
+project_collection_menu:
+  title: 'Projects'
+  route_name: entity.project.collection
+  description: 'List of Projects'
+  parent: system.admin_content
+
+project_type_collection_menu:
+  title: 'Project types'
+  route_name: entity.project_type.collection
+  description: 'List of Project types'
+  parent: system.admin_structure
+
+project_task_collection_menu:
+  title: 'Tasks'
+  route_name: entity.project_task.collection
+  description: 'List of Tasks'
+  parent: system.admin_content
+
+project_task_type_collection_menu:
+  title: 'Task types'
+  route_name: entity.project_task_type.collection
+  description: 'List of Project Task types'
+  parent: system.admin_structure

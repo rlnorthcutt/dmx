@@ -1,0 +1,16 @@
+uuid: e9c35a5a-2f1b-4593-a84c-c4a4d5324bfb
+langcode: en
+status: true
+template: dmx_project__status
+label: 'Project Status'
+description: 'Activity related to modifying project status.'
+text:
+  -
+    value: '<p><a data-dmx-user="[message:author:uid]" href="[message:author:url]">[message:author]</a> moved the project <span data-dmx-project="[message:field_dmx_project:target_id]">[message:field_dmx_project]</span> to [message:field_dmx_project:entity:status] <span class="dmx-team-time timeago" title="[message:created:html_datetime]">[message:created]</span></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

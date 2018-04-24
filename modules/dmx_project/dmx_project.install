@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for dmx_project.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function dmx_project_uninstall() {
+  $message_templates = ['dmx_project__create', 'dmx_project__status', 'dmx_project_task__create', 'dmx_project_task__assigned', 'dmx_project_task__completed'];
+
+  // Delete messages.
+  foreach ($message_templates as $message_template) {
+    $result = \Drupal::entityQuery('message')->condition('template', $message_template)->execute();
+    entity_delete_multiple('message', $result);
+  }
+
+  // Delete message templates.
+  foreach ($message_templates as $message_template) {
+    $template = \Drupal::entityManager()->getStorage('message_template')->load($message_template);
+    if ($template) {
+      $template->delete();
+    }
+  }
+
+  // Delete message views.
+  $views = ['dmx_project_activity'];
+  foreach ($views as $view_id) {
+    $view = \Drupal\views\Views::getView($view_id);
+    $storage = $view->storage;
+    $storage->delete();
+  }
+}

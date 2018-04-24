@@ -1,0 +1,16 @@
+{
+    "name": "drupal/dmx",
+    "description": "Suite of modules designed to enhance the Drupal marketer experience.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/dmx",
+    "license": "GPL-2.0+",
+    "require-dev": {
+        "rmm5t/jquery-timeago": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "John Money",
+            "email": "john.money@acquia.com"
+        }
+    ]
+}
