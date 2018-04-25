@@ -36,8 +36,11 @@ function dmx_project_theme() {
  * Implements hook_views_pre_render().
  */
 function dmx_project_views_pre_render(ViewExecutable $view) {
-    if (isset($view) && in_array($view->storage->id(), ['dmx_project_task', 'dmx_project_tasks'])) {
-        $view->element['#attached']['library'][] = 'dmx_project/task-list';
+    if (isset($view)) {
+        // Attach library to task views.
+        if (in_array($view->id(), ['dmx_project_task', 'dmx_project_tasks'])) { //$view->current_display
+            $view->element['#attached']['library'][] = 'dmx_project/task-list';
+        }
     }
 }
 

@@ -113,7 +113,7 @@ class TaskCheckboxForm extends FormBase {
           'type' => 'none',
         ],
       ],
-      '#disabled' => !$this->entity->access('update'),
+      '#disabled' => !$this->accessCheckboxField(),
     ];
 
     return $form;
@@ -162,10 +162,34 @@ class TaskCheckboxForm extends FormBase {
       throw new \Exception("Field $this->fieldName not found in entity {$this->entity->id()}.");
     }
 
-    if ($this->entity->access('update')) {
+    if ($this->accessCheckboxField()) {
       $this->entity->get($this->fieldName)->set($this->delta, $value);
       $this->entity->save();
     }
+  }
+
+  /**
+   * Custom access based on task update permissions or assigned reference.
+   *
+   * @return bool
+   */
+  public function accessCheckboxField() {
+    $access = $this->entity->access('update');
+
+    if (!$access) {
+      if (!empty($this->entity->get('field_dmx_project_task_assigned'))) {
+        $current_user = \Drupal::currentUser();
+
+        foreach ($this->entity->get('field_dmx_project_task_assigned')->referencedEntities() as $account) {
+          if ($current_user->id() == $account->id()) {
+            $access = TRUE;
+            break;
+          }
+        }
+      }
+    }
+
+    return $access;
   }
 
 }
