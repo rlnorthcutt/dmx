@@ -26,9 +26,10 @@ DMX has only been tested with Drupal 8.4 and [Material Admin](https://www.drupal
 ### Components
 
 ####DMX Core####
+
 Provides core functionality for DMX.
 
-__Drupal modules__
+__Drupal contrib modules__
 - config_rewrite
 - lightning_media
 - twig_tweak
@@ -38,26 +39,20 @@ __External libraries__
 - [jQuery initial.js](http://judelicio.us/initial.js/) plugin to create team member images without a profile picture
 
 ####DMX Team####
+
 Enables marketing team to communicate and collaborate.
 
-__Drupal modules__
-- image
+__Drupal contrib modules__
 - lightning_core
 - message
-- user
 
 ####DMX Project####
+
 Enables tasks, content, assets and links to be related for the planning and launch of a project. Depends on DMX Core and DMX Team.
 
-__Drupal modules__
-- datetime
-- datetime_range
+__Drupal contrib modules__
 - date_range_formatter
 - entity_browser
-- entity_reference
 - inline_entity_form
 - lightning_media
-- link
-- node
 - optional_end_date
-- options
