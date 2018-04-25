@@ -17,6 +17,9 @@ function dmx_page_attachments(array &$attachments) {
   if ($is_admin) {
     //@TODO if material_admin is not current theme, attach material-base instead
     $attachments['#attached']['library'][] = 'dmx/material-overrides';
+
+    // Add libraries.
     $attachments['#attached']['library'][] = 'dmx/timeago';
+    $attachments['#attached']['library'][] = 'dmx/initial';
   }
 }

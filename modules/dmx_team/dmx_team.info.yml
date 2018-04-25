@@ -5,6 +5,7 @@ package: DMX
 core: 8.x
 version: '8.x-1.x-dev'
 dependencies:
+    - dmx
     - image
     - lightning_core
     - message

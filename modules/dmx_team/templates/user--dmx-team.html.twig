@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * DMX team theme implementation to present user data.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+{% spaceless %}
+  {% set picture = content.user_picture %}
+  <article{{ attributes.addClass('profile') }}>
+    {% if picture|length > 2 %}
+      {{ picture }}
+    {% else %}
+      {# initial.js profile image #}
+      <a href="/user/{{ user.id }}"><img data-name="{{ user.displayname }}" data-width="48" data-height="48" data-tooltip="{{ user.displayname }}" class="initial-image image-style-dmx-team tooltipped" /></a>
+    {% endif %}
+  </article>
+{% endspaceless %}

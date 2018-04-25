@@ -4,8 +4,23 @@
     "type": "drupal-module",
     "homepage": "https://www.drupal.org/project/dmx",
     "license": "GPL-2.0+",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "judesfernando/initial.js",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/judesfernando/initial.js.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
     "require-dev": {
-        "rmm5t/jquery-timeago": "dev-master"
+        "rmm5t/jquery-timeago": "dev-master",
+        "judesfernando/initial.js": "dev-master"
     },
     "authors": [
         {

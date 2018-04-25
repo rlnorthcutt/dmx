@@ -18,3 +18,23 @@ function dmx_team_page_attachments(array &$attachments) {
     $attachments['#attached']['library'][] = 'dmx_team/dmx-team';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter
+ */
+function dmx_team_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook theme_registry_alter
+ * Add the dmx_team user view mode.
+ */
+function dmx_team_theme_registry_alter(&$theme_registry){
+  $theme_registry['user__dmx_team'] = [
+    'template' => 'user--dmx-team',
+    'path' => drupal_get_path('module','dmx_team') . '/templates/',
+    'render element' => 'elements',
+    'preprocess functions' => ['template_preprocess', 'template_preprocess_user'],
+  ];
+}

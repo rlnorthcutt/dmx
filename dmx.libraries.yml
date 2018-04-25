@@ -16,4 +16,10 @@ timeago:
     js/timeago.js: {}
   dependencies:
     - core/jquery
-    - core/drupalSettings
+
+initial:
+  js:
+    vendor/judesfernando/initial.js/initial.js: {}
+    js/initial.js: {}
+  dependencies:
+    - core/jquery

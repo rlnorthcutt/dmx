@@ -1,9 +1,7 @@
 /* People */
 .view-dmx-project-user .view-content { display: flex; }
 .view-dmx-project-user .views-row { display: inline-flex; padding: 0 12px 12px 0; }
-.profile .image-style-dmx-team {
-    border-radius: 50%;
-}
+.image-style-dmx-team { border-radius: 50%; }
 
 /* Activity */
 .dmx-team-activity li {
