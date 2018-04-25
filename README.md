@@ -7,7 +7,7 @@ DMX is a suite of modules designed to enhance the Drupal marketer experience. Ea
 ![DMX Project overview](http://johnmoney.github.io/files/projects/dmx/dmx-project-overview.gif)
 
 
-## Installation
+### Installation
 
 DMX uses a number of external libraries which can be installed with [Composer](https://getcomposer.org/):
 
@@ -25,7 +25,7 @@ DMX has only been tested with Drupal 8.4 and [Material Admin](https://www.drupal
 
 ## Components
 
-###DMX Core
+### DMX Core
 
 Provides core functionality for DMX.
 
@@ -38,7 +38,7 @@ __External libraries__
 - [jQuery Timeago](http://timeago.yarp.com/) plugin to create dynamically updating "time ago" dates
 - [jQuery initial.js](http://judelicio.us/initial.js/) plugin to create team member images without a profile picture
 
-###DMX Team
+### DMX Team
 
 Enables marketing team to communicate and collaborate.
 
@@ -46,7 +46,7 @@ __Drupal contrib modules__
 - lightning_core
 - message
 
-###DMX Project
+### DMX Project
 
 Enables tasks, content, assets and links to be related for the planning and launch of a project. Depends on DMX Core and DMX Team.
 
